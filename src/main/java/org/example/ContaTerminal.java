@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
-public class ContaBanco {
+public class ContaTerminal {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             String agencyNumber = promptForValidInput(scanner, "Por favor, digite o número da Agência (5 dígitos/ Formato: 000-0): ",
