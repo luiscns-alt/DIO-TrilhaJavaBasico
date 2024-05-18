@@ -3,7 +3,21 @@ package org.example;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
+/**
+ * The ContaTerminal class represents a terminal-based account creation system.
+ * It prompts the user for input regarding agency number, account number, customer name, and balance.
+ * It then validates the input using the promptForValidInput method.
+ * Finally, it prints a formatted message with the provided information.
+ */
 public class ContaTerminal {
+    /**
+     * The main method for the ContaTerminal class.
+     * It prompts the user for input regarding agency number, account number, customer name, and balance.
+     * It then validates the input using the promptForValidInput method.
+     * Finally, it prints a formatted message with the provided information.
+     *
+     * @param args The command line arguments.
+     */
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             String agencyNumber = promptForValidInput(scanner, "Por favor, digite o número da Agência (5 dígitos/ Formato: 000-0): ",
@@ -23,7 +37,16 @@ public class ContaTerminal {
         }
     }
 
-    private static String promptForValidInput(Scanner scanner, String promptMessage, Predicate<String> validation, String errorMessage) {
+    /**
+     * Prompts the user for valid input based on the given validation condition.
+     *
+     * @param scanner       The Scanner object used to read user input.
+     * @param promptMessage The message displayed to prompt the user for input.
+     * @param validation    The Predicate that validates the user input.
+     * @param errorMessage  The error message displayed if the user input is invalid.
+     * @return The user input that satisfies the validation condition.
+     */
+    public static String promptForValidInput(Scanner scanner, String promptMessage, Predicate<String> validation, String errorMessage) {
         String input;
         do {
             System.out.print(promptMessage);
